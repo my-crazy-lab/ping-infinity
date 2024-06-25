@@ -97,7 +97,15 @@ const ProfileCover = ({ user }) => {
         </Box>
       </Box>
       <CardCover>
-        <CardMedia image={user.coverImg} />
+        <CardMedia
+          component="iframe"
+          src={user.coverVideoUrl}
+          title="Profile Cover Video"
+          sx={{ height: 200 }}
+          style={{ border: '1px solid #000' }}
+          image={user.coverImg}
+          alt="Profile Cover Image"
+        />
         <CardCoverAction>
           <Input accept="image/*" id="change-cover" multiple type="file" />
           <label htmlFor="change-cover">

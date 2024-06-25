@@ -133,12 +133,15 @@ function Cards() {
                     subheader="September 14, 2016"
                   />
                   <CardMedia
+                    component="img"
                     sx={{
                       height: 0,
                       paddingTop: '56.25%' // 16:9
                     }}
                     image="/static/images/placeholders/covers/1.jpg"
+                    alt="Paella dish"
                     title="Paella dish"
+                    src="/static/images/placeholders/covers/1.jpg"
                   />
                   <CardContent>
                     <Typography variant="body2" color="text.secondary">
@@ -209,9 +212,11 @@ function Cards() {
               <CardContent>
                 <Card sx={{ maxWidth: 345 }}>
                   <CardMedia
-                    sx={{ height: 140 }}
-                    image="/static/images/placeholders/covers/6.jpg"
+                    component="iframe"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
                     title="Contemplative Reptile"
+                    sx={{ height: 200 }}
+                    style={{ border: '1px solid #000' }}
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
