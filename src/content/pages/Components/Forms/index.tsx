@@ -105,18 +105,42 @@ function Forms() {
                       id="outlined-required"
                       label="Required"
                       defaultValue="Hello World"
+                      variant="outlined"
+                      InputProps={{
+                        startAdornment: <VolumeDown />,
+                        endAdornment: <VolumeUp />
+                      }}
+                      FormHelperTextProps={{
+                        children: 'This field is required',
+                        component: 'div'
+                      }}
+                      SelectProps={{
+                        native: false,
+                        autoWidth: true
+                      }}
+                      helperText="Some important text"
                     />
                     <TextField
                       disabled
                       id="outlined-disabled"
                       label="Disabled"
                       defaultValue="Hello World"
+                      variant="outlined"
+                      InputProps={{
+                        readOnly: true
+                      }}
+                      helperText="This field is disabled"
                     />
                     <TextField
                       id="outlined-password-input"
                       label="Password"
                       type="password"
                       autoComplete="current-password"
+                      variant="outlined"
+                      InputProps={{
+                        endAdornment: <VolumeUp />
+                      }}
+                      helperText="Enter your password"
                     />
                     <TextField
                       id="outlined-read-only-input"
@@ -125,6 +149,8 @@ function Forms() {
                       InputProps={{
                         readOnly: true
                       }}
+                      variant="outlined"
+                      helperText="This field is read-only"
                     />
                     <TextField
                       id="outlined-number"
@@ -133,17 +159,25 @@ function Forms() {
                       InputLabelProps={{
                         shrink: true
                       }}
+                      variant="outlined"
+                      helperText="Enter a number"
                     />
                     <TextField
                       id="outlined-search"
                       label="Search field"
                       type="search"
+                      variant="outlined"
+                      helperText="Enter search text"
                     />
                     <TextField
                       id="outlined-helperText"
                       label="Helper text"
                       defaultValue="Default Value"
                       helperText="Some important text"
+                      variant="outlined"
+                      InputProps={{
+                        endAdornment: <VolumeUp />
+                      }}
                     />
                   </div>
                   <div>
@@ -153,6 +187,19 @@ function Forms() {
                       label="Required"
                       defaultValue="Hello World"
                       variant="filled"
+                      InputProps={{
+                        startAdornment: <VolumeDown />,
+                        endAdornment: <VolumeUp />
+                      }}
+                      FormHelperTextProps={{
+                        children: 'This field is required',
+                        component: 'div'
+                      }}
+                      SelectProps={{
+                        native: false,
+                        autoWidth: true
+                      }}
+                      helperText="Some important text"
                     />
                     <TextField
                       disabled
@@ -160,6 +207,10 @@ function Forms() {
                       label="Disabled"
                       defaultValue="Hello World"
                       variant="filled"
+                      InputProps={{
+                        readOnly: true
+                      }}
+                      helperText="This field is disabled"
                     />
                     <TextField
                       id="filled-password-input"
@@ -167,6 +218,10 @@ function Forms() {
                       type="password"
                       autoComplete="current-password"
                       variant="filled"
+                      InputProps={{
+                        endAdornment: <VolumeUp />
+                      }}
+                      helperText="Enter your password"
                     />
                     <TextField
                       id="filled-read-only-input"
@@ -176,6 +231,7 @@ function Forms() {
                         readOnly: true
                       }}
                       variant="filled"
+                      helperText="This field is read-only"
                     />
                     <TextField
                       id="filled-number"
@@ -185,12 +241,14 @@ function Forms() {
                         shrink: true
                       }}
                       variant="filled"
+                      helperText="Enter a number"
                     />
                     <TextField
                       id="filled-search"
                       label="Search field"
                       type="search"
                       variant="filled"
+                      helperText="Enter search text"
                     />
                     <TextField
                       id="filled-helperText"
@@ -198,6 +256,9 @@ function Forms() {
                       defaultValue="Default Value"
                       helperText="Some important text"
                       variant="filled"
+                      InputProps={{
+                        endAdornment: <VolumeUp />
+                      }}
                     />
                   </div>
                   <div>
@@ -207,6 +268,19 @@ function Forms() {
                       label="Required"
                       defaultValue="Hello World"
                       variant="standard"
+                      InputProps={{
+                        startAdornment: <VolumeDown />,
+                        endAdornment: <VolumeUp />
+                      }}
+                      FormHelperTextProps={{
+                        children: 'This field is required',
+                        component: 'div'
+                      }}
+                      SelectProps={{
+                        native: false,
+                        autoWidth: true
+                      }}
+                      helperText="Some important text"
                     />
                     <TextField
                       disabled
@@ -214,6 +288,10 @@ function Forms() {
                       label="Disabled"
                       defaultValue="Hello World"
                       variant="standard"
+                      InputProps={{
+                        readOnly: true
+                      }}
+                      helperText="This field is disabled"
                     />
                     <TextField
                       id="standard-password-input"
@@ -221,6 +299,10 @@ function Forms() {
                       type="password"
                       autoComplete="current-password"
                       variant="standard"
+                      InputProps={{
+                        endAdornment: <VolumeUp />
+                      }}
+                      helperText="Enter your password"
                     />
                     <TextField
                       id="standard-read-only-input"
@@ -230,6 +312,7 @@ function Forms() {
                         readOnly: true
                       }}
                       variant="standard"
+                      helperText="This field is read-only"
                     />
                     <TextField
                       id="standard-number"
@@ -239,12 +322,14 @@ function Forms() {
                         shrink: true
                       }}
                       variant="standard"
+                      helperText="Enter a number"
                     />
                     <TextField
                       id="standard-search"
                       label="Search field"
                       type="search"
                       variant="standard"
+                      helperText="Enter search text"
                     />
                     <TextField
                       id="standard-helperText"
@@ -252,6 +337,9 @@ function Forms() {
                       defaultValue="Default Value"
                       helperText="Some important text"
                       variant="standard"
+                      InputProps={{
+                        endAdornment: <VolumeUp />
+                      }}
                     />
                   </div>
                 </Box>
@@ -279,6 +367,20 @@ function Forms() {
                       value={currency}
                       onChange={handleChange}
                       helperText="Please select your currency"
+                      SelectProps={{
+                        MenuProps: {
+                          PaperProps: {
+                            style: {
+                              maxHeight: 48 * 4.5 + 8,
+                              width: 250
+                            }
+                          }
+                        }
+                      }}
+                      InputProps={{
+                        startAdornment: <VolumeDown />,
+                        endAdornment: <VolumeUp />
+                      }}
                     >
                       {currencies.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
@@ -293,9 +395,21 @@ function Forms() {
                       value={currency}
                       onChange={handleChange}
                       SelectProps={{
-                        native: true
+                        native: true,
+                        MenuProps: {
+                          PaperProps: {
+                            style: {
+                              maxHeight: 48 * 4.5 + 8,
+                              width: 250
+                            }
+                          }
+                        }
                       }}
                       helperText="Please select your currency"
+                      InputProps={{
+                        startAdornment: <VolumeDown />,
+                        endAdornment: <VolumeUp />
+                      }}
                     >
                       {currencies.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -313,6 +427,20 @@ function Forms() {
                       onChange={handleChange}
                       helperText="Please select your currency"
                       variant="filled"
+                      SelectProps={{
+                        MenuProps: {
+                          PaperProps: {
+                            style: {
+                              maxHeight: 48 * 4.5 + 8,
+                              width: 250
+                            }
+                          }
+                        }
+                      }}
+                      InputProps={{
+                        startAdornment: <VolumeDown />,
+                        endAdornment: <VolumeUp />
+                      }}
                     >
                       {currencies.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
@@ -327,10 +455,22 @@ function Forms() {
                       value={currency}
                       onChange={handleChange}
                       SelectProps={{
-                        native: true
+                        native: true,
+                        MenuProps: {
+                          PaperProps: {
+                            style: {
+                              maxHeight: 48 * 4.5 + 8,
+                              width: 250
+                            }
+                          }
+                        }
                       }}
                       helperText="Please select your currency"
                       variant="filled"
+                      InputProps={{
+                        startAdornment: <VolumeDown />,
+                        endAdornment: <VolumeUp />
+                      }}
                     >
                       {currencies.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -348,6 +488,20 @@ function Forms() {
                       onChange={handleChange}
                       helperText="Please select your currency"
                       variant="standard"
+                      SelectProps={{
+                        MenuProps: {
+                          PaperProps: {
+                            style: {
+                              maxHeight: 48 * 4.5 + 8,
+                              width: 250
+                            }
+                          }
+                        }
+                      }}
+                      InputProps={{
+                        startAdornment: <VolumeDown />,
+                        endAdornment: <VolumeUp />
+                      }}
                     >
                       {currencies.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
@@ -362,10 +516,22 @@ function Forms() {
                       value={currency}
                       onChange={handleChange}
                       SelectProps={{
-                        native: true
+                        native: true,
+                        MenuProps: {
+                          PaperProps: {
+                            style: {
+                              maxHeight: 48 * 4.5 + 8,
+                              width: 250
+                            }
+                          }
+                        }
                       }}
                       helperText="Please select your currency"
                       variant="standard"
+                      InputProps={{
+                        startAdornment: <VolumeDown />,
+                        endAdornment: <VolumeUp />
+                      }}
                     >
                       {currencies.map((option) => (
                         <option key={option.value} value={option.value}>
