@@ -7,7 +7,11 @@ import {
   Button,
   FormControl,
   OutlinedInput,
-  InputAdornment
+  InputAdornment,
+  FormHelperText,
+  FormLabel,
+  Select,
+  MenuItem
 } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
@@ -63,7 +67,17 @@ function Status404() {
           </Box>
           <Container maxWidth="sm">
             <Card sx={{ textAlign: 'center', mt: 3, p: 4 }}>
-              <FormControl variant="outlined" fullWidth>
+              <FormControl 
+                variant="outlined" 
+                fullWidth 
+                color="primary" 
+                size="small" 
+                disabled={false} 
+                required 
+                margin="normal"
+                error={false}
+              >
+                <FormLabel>Search Box</FormLabel>
                 <OutlinedInputWrapper
                   type="text"
                   placeholder="Search terms here..."
@@ -80,6 +94,7 @@ function Status404() {
                     </InputAdornment>
                   }
                 />
+                <FormHelperText>Type something to search</FormHelperText>
               </FormControl>
               <Divider sx={{ my: 4 }}>OR</Divider>
               <Button href="/overview" variant="outlined">
