@@ -12,9 +12,12 @@ import {
   ListItem,
   ListItemText,
   List,
-  ListItemAvatar
+  ListItemAvatar,
+  IconButton,
+  ListItemSecondaryAction
 } from '@mui/material';
 import TrendingUp from '@mui/icons-material/TrendingUp';
+import TrendingDown from '@mui/icons-material/TrendingDown';
 import Text from 'src/components/Text';
 import Chart from 'react-apexcharts';
 import type { ApexOptions } from 'apexcharts';
@@ -230,7 +233,7 @@ function AccountBalance() {
                     width: '100%'
                   }}
                 >
-                  <ListItem disableGutters>
+                  <ListItem alignItems="center" button dense selected>
                     <ListItemAvatarWrapper>
                       <img
                         alt="BTC"
@@ -246,14 +249,20 @@ function AccountBalance() {
                         noWrap: true
                       }}
                     />
-                    <Box>
-                      <Typography align="right" variant="h4" noWrap>
-                        20%
-                      </Typography>
-                      <Text color="success">+2.54%</Text>
-                    </Box>
+                    <ListItemSecondaryAction>
+                      <IconButton edge="end" aria-label="delete">
+                        <TrendingUp fontSize="small" />
+                      </IconButton>
+                      <Box>
+                        <Typography align="right" variant="h4" noWrap>
+                          20%
+                        </Typography>
+                        <Text color="success">+2.54%</Text>
+                      </Box>
+                    </ListItemSecondaryAction>
                   </ListItem>
-                  <ListItem disableGutters>
+                  <Divider component="li" />
+                  <ListItem alignItems="center" button dense>
                     <ListItemAvatarWrapper>
                       <img
                         alt="XRP"
@@ -269,14 +278,20 @@ function AccountBalance() {
                         noWrap: true
                       }}
                     />
-                    <Box>
-                      <Typography align="right" variant="h4" noWrap>
-                        10%
-                      </Typography>
-                      <Text color="error">-1.22%</Text>
-                    </Box>
+                    <ListItemSecondaryAction>
+                      <IconButton edge="end" aria-label="delete">
+                        <TrendingDown fontSize="small" />
+                      </IconButton>
+                      <Box>
+                        <Typography align="right" variant="h4" noWrap>
+                          10%
+                        </Typography>
+                        <Text color="error">-1.22%</Text>
+                      </Box>
+                    </ListItemSecondaryAction>
                   </ListItem>
-                  <ListItem disableGutters>
+                  <Divider component="li" />
+                  <ListItem alignItems="center" button dense>
                     <ListItemAvatarWrapper>
                       <img
                         alt="ADA"
@@ -292,14 +307,20 @@ function AccountBalance() {
                         noWrap: true
                       }}
                     />
-                    <Box>
-                      <Typography align="right" variant="h4" noWrap>
-                        40%
-                      </Typography>
-                      <Text color="success">+10.50%</Text>
-                    </Box>
+                    <ListItemSecondaryAction>
+                      <IconButton edge="end" aria-label="delete">
+                        <TrendingUp fontSize="small" />
+                      </IconButton>
+                      <Box>
+                        <Typography align="right" variant="h4" noWrap>
+                          40%
+                        </Typography>
+                        <Text color="success">+10.50%</Text>
+                      </Box>
+                    </ListItemSecondaryAction>
                   </ListItem>
-                  <ListItem disableGutters>
+                  <Divider component="li" />
+                  <ListItem alignItems="center" button dense>
                     <ListItemAvatarWrapper>
                       <img
                         alt="ETH"
@@ -315,12 +336,17 @@ function AccountBalance() {
                         noWrap: true
                       }}
                     />
-                    <Box>
-                      <Typography align="right" variant="h4" noWrap>
-                        30%
-                      </Typography>
-                      <Text color="error">-12.38%</Text>
-                    </Box>
+                    <ListItemSecondaryAction>
+                      <IconButton edge="end" aria-label="delete">
+                        <TrendingDown fontSize="small" />
+                      </IconButton>
+                      <Box>
+                        <Typography align="right" variant="h4" noWrap>
+                          30%
+                        </Typography>
+                        <Text color="error">-12.38%</Text>
+                      </Box>
+                    </ListItemSecondaryAction>
                   </ListItem>
                 </List>
               </Grid>
