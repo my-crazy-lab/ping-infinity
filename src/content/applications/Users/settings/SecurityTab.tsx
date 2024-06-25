@@ -28,6 +28,7 @@ import {
 
 import DoneTwoToneIcon from '@mui/icons-material/DoneTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
+import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 import { format, subHours, subWeeks, subDays } from 'date-fns';
 
 const ButtonError = styled(Button)(
@@ -138,7 +139,13 @@ function SecurityTab() {
                 primary="Google"
                 secondary="A Google account hasn’t been yet added to your account"
               />
-              <Button color="secondary" size="large" variant="contained">
+              <Button
+                color="secondary"
+                size="large"
+                variant="contained"
+                startIcon={<ArrowForwardTwoToneIcon />}
+                sx={{ ml: 1 }}
+              >
                 Connect
               </Button>
             </ListItem>
@@ -163,7 +170,11 @@ function SecurityTab() {
                 primary="Facebook"
                 secondary="Your Facebook account has been successfully connected"
               />
-              <ButtonError size="large" variant="contained">
+              <ButtonError
+                size="medium"
+                variant="outlined"
+                endIcon={<DeleteTwoToneIcon />}
+              >
                 Revoke access
               </ButtonError>
             </ListItem>
@@ -181,9 +192,13 @@ function SecurityTab() {
                   lineHeight: 1
                 }}
                 primary="Twitter"
-                secondary="Your Twitter account was last syncronized 6 days ago"
+                secondary="Your Twitter account was last synchronized 6 days ago"
               />
-              <ButtonError size="large" variant="contained">
+              <ButtonError
+                size="small"
+                variant="contained"
+                startIcon={<DoneTwoToneIcon />}
+              >
                 Revoke access
               </ButtonError>
             </ListItem>
@@ -209,7 +224,12 @@ function SecurityTab() {
                 primary="Change Password"
                 secondary="You can change your password here"
               />
-              <Button size="large" variant="outlined">
+              <Button
+                size="small"
+                variant="outlined"
+                color="primary"
+                endIcon={<ArrowForwardTwoToneIcon />}
+              >
                 Change password
               </Button>
             </ListItem>

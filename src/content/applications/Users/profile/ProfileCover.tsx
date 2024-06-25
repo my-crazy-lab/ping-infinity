@@ -15,6 +15,7 @@ import ArrowBackTwoToneIcon from '@mui/icons-material/ArrowBackTwoTone';
 import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 import UploadTwoToneIcon from '@mui/icons-material/UploadTwoTone';
 import MoreHorizTwoToneIcon from '@mui/icons-material/MoreHorizTwoTone';
+import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
 
 const Input = styled('input')({
   display: 'none'
@@ -22,7 +23,6 @@ const Input = styled('input')({
 
 const AvatarWrapper = styled(Card)(
   ({ theme }) => `
-
     position: relative;
     overflow: visible;
     display: inline-block;
@@ -105,6 +105,10 @@ const ProfileCover = ({ user }) => {
               startIcon={<UploadTwoToneIcon />}
               variant="contained"
               component="span"
+              color="primary"
+              size="large"
+              disabled={false}
+              sx={{ ml: 1 }}
             >
               Change cover
             </Button>
@@ -141,10 +145,23 @@ const ProfileCover = ({ user }) => {
           justifyContent="space-between"
         >
           <Box>
-            <Button size="small" variant="contained">
+            <Button
+              size="small"
+              variant="contained"
+              color="secondary"
+              startIcon={<CheckTwoToneIcon />}
+              endIcon={<ArrowForwardTwoToneIcon />}
+              sx={{ mr: 1 }}
+            >
               Follow
             </Button>
-            <Button size="small" sx={{ mx: 1 }} variant="outlined">
+            <Button
+              size="medium"
+              variant="outlined"
+              color="success"
+              startIcon={<ArrowBackTwoToneIcon />}
+              sx={{ mx: 1 }}
+            >
               View website
             </Button>
             <IconButton color="primary" sx={{ p: 0.5 }}>
@@ -153,9 +170,11 @@ const ProfileCover = ({ user }) => {
           </Box>
           <Button
             sx={{ mt: { xs: 2, md: 0 } }}
-            size="small"
+            size="large"
             variant="text"
+            color="info"
             endIcon={<ArrowForwardTwoToneIcon />}
+            disabled={false}
           >
             See all {user.followers} connections
           </Button>
@@ -166,7 +185,6 @@ const ProfileCover = ({ user }) => {
 };
 
 ProfileCover.propTypes = {
-  // @ts-ignore
   user: PropTypes.object.isRequired
 };
 
