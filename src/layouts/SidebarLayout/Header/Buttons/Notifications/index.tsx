@@ -13,7 +13,8 @@ import {
 import { useRef, useState } from 'react';
 import NotificationsActiveTwoToneIcon from '@mui/icons-material/NotificationsActiveTwoTone';
 import { styled } from '@mui/material/styles';
-
+import Grow from '@mui/material/Grow';
+import Paper from '@mui/material/Paper';
 import { formatDistance, subDays } from 'date-fns';
 
 const NotificationsBadge = styled(Badge)(
@@ -78,6 +79,35 @@ function HeaderNotifications() {
         transformOrigin={{
           vertical: 'top',
           horizontal: 'right'
+        }}
+        PaperProps={{
+          elevation: 24,
+          style: {
+            backgroundColor: '#f5f5f5',
+            padding: '10px',
+          },
+          component: Paper,
+        }}
+        TransitionComponent={Grow}
+        transitionDuration={{ enter: 500, exit: 300 }}
+        disableScrollLock
+        container={document.body}
+        marginThreshold={20}
+        slots={{
+          root: 'div',
+          paper: Paper,
+        }}
+        slotProps={{
+          root: {
+            style: {
+              zIndex: 1300,
+            },
+          },
+          paper: {
+            style: {
+              backgroundColor: '#e0f7fa',
+            },
+          },
         }}
       >
         <Box

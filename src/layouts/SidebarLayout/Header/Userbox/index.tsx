@@ -22,6 +22,8 @@ import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
 import LockOpenTwoToneIcon from '@mui/icons-material/LockOpenTwoTone';
 import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
+import Grow from '@mui/material/Grow';
+import Paper from '@mui/material/Paper';
 
 const UserBoxButton = styled(Button)(
   ({ theme }) => `
@@ -103,6 +105,35 @@ function HeaderUserbox() {
         transformOrigin={{
           vertical: 'top',
           horizontal: 'right'
+        }}
+        PaperProps={{
+          elevation: 24,
+          style: {
+            backgroundColor: '#f5f5f5',
+            padding: '10px',
+          },
+          component: Paper,
+        }}
+        TransitionComponent={Grow}
+        transitionDuration={{ enter: 500, exit: 300 }}
+        disableScrollLock
+        container={document.body}
+        marginThreshold={20}
+        slots={{
+          root: 'div',
+          paper: Paper,
+        }}
+        slotProps={{
+          root: {
+            style: {
+              zIndex: 1300,
+            },
+          },
+          paper: {
+            style: {
+              backgroundColor: '#e0f7fa',
+            },
+          },
         }}
       >
         <MenuUserBox sx={{ minWidth: 210 }} display="flex">
