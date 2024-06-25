@@ -17,7 +17,21 @@ function EditProfileTab() {
   return (
     <Grid container spacing={3}>
       <Grid item xs={12}>
-        <Card>
+        <Card
+          variant="outlined"
+          sx={{
+            backgroundColor: 'background.paper',
+            boxShadow: 3,
+            borderRadius: 2,
+            border: 1,
+            borderColor: 'divider',
+            padding: 2,
+            transition: '0.3s',
+            '&:hover': {
+              boxShadow: 6
+            }
+          }}
+        >
           <Box
             p={3}
             display="flex"
@@ -79,7 +93,19 @@ function EditProfileTab() {
         </Card>
       </Grid>
       <Grid item xs={12}>
-        <Card>
+        <Card
+          variant="elevation"
+          elevation={6}
+          sx={{
+            backgroundColor: 'background.default',
+            borderRadius: 2,
+            padding: 2,
+            transition: '0.3s',
+            '&:hover': {
+              boxShadow: 10
+            }
+          }}
+        >
           <Box
             p={3}
             display="flex"
@@ -139,7 +165,21 @@ function EditProfileTab() {
         </Card>
       </Grid>
       <Grid item xs={12}>
-        <Card>
+        <Card
+          raised
+          sx={{
+            backgroundColor: 'background.paper',
+            borderRadius: 2,
+            border: '2px solid',
+            borderColor: 'divider',
+            padding: 2,
+            transition: '0.3s',
+            '&:hover': {
+              borderColor: 'primary.main',
+              boxShadow: 12
+            }
+          }}
+        >
           <Box
             p={3}
             display="flex"
