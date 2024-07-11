@@ -312,7 +312,30 @@ function SecurityTab() {
             subheader="Recent sign in activity logs"
           />
           <Divider />
-          <TableContainer>
+          <TableContainer
+            component="section"
+            className="custom-table-container"
+            classes={{ root: 'custom-root-class' }}
+            sx={{
+              maxHeight: 440,
+              backgroundColor: 'lightgrey',
+              border: '2px solid black',
+              borderRadius: '8px',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+              padding: 2,
+              '&:hover': {
+                backgroundColor: 'darkgrey',
+              },
+              '& .MuiTableContainer-root': {
+                backgroundColor: 'white',
+              },
+            }}
+            ownerState={{
+              classes: 'custom-owner-state',
+              sx: 'custom-sx-state',
+              component: 'section',
+            }}
+          >
             <Table>
               <TableHead>
                 <TableRow>
