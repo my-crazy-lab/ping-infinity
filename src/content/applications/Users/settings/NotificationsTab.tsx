@@ -52,7 +52,24 @@ function NotificationsTab() {
               dense
               selected
               secondaryAction={
-                <IconButton edge="end" aria-label="delete">
+                <IconButton
+                  edge="end"
+                  aria-label="delete"
+                  color="error"
+                  size="large"
+                  disabled={false}
+                  sx={{
+                    backgroundColor: 'lightgrey',
+                    '&:hover': {
+                      backgroundColor: 'grey',
+                    },
+                    border: '2px solid black',
+                    borderRadius: '50%',
+                  }}
+                  classes={{ root: 'custom-icon-button-root' }}
+                  disableFocusRipple={false}
+                  disableRipple={false}
+                >
                   <DeleteIcon />
                 </IconButton>
               }
@@ -83,7 +100,24 @@ function NotificationsTab() {
               button
               dense
               secondaryAction={
-                <IconButton edge="end" aria-label="delete">
+                <IconButton
+                  edge="start"
+                  aria-label="delete"
+                  color="primary"
+                  size="small"
+                  disabled={true}
+                  sx={{
+                    backgroundColor: 'lightblue',
+                    '&:hover': {
+                      backgroundColor: 'blue',
+                    },
+                    border: '2px dashed black',
+                    borderRadius: '50%',
+                  }}
+                  classes={{ root: 'custom-icon-button-root-small' }}
+                  disableFocusRipple={true}
+                  disableRipple={false}
+                >
                   <DeleteIcon />
                 </IconButton>
               }
@@ -125,7 +159,24 @@ function NotificationsTab() {
               button
               dense
               secondaryAction={
-                <IconButton edge="end" aria-label="delete">
+                <IconButton
+                  edge="end"
+                  aria-label="delete"
+                  color="warning"
+                  size="medium"
+                  disabled={false}
+                  sx={{
+                    backgroundColor: 'lightyellow',
+                    '&:hover': {
+                      backgroundColor: 'yellow',
+                    },
+                    border: '2px solid orange',
+                    borderRadius: '50%',
+                  }}
+                  classes={{ root: 'custom-icon-button-root-warning' }}
+                  disableFocusRipple={false}
+                  disableRipple={false}
+                >
                   <DeleteIcon />
                 </IconButton>
               }
@@ -156,7 +207,24 @@ function NotificationsTab() {
               button
               dense
               secondaryAction={
-                <IconButton edge="end" aria-label="delete">
+                <IconButton
+                  edge="start"
+                  aria-label="delete"
+                  color="success"
+                  size="large"
+                  disabled={true}
+                  sx={{
+                    backgroundColor: 'lightgreen',
+                    '&:hover': {
+                      backgroundColor: 'green',
+                    },
+                    border: '2px dotted black',
+                    borderRadius: '50%',
+                  }}
+                  classes={{ root: 'custom-icon-button-root-success' }}
+                  disableFocusRipple={true}
+                  disableRipple={true}
+                >
                   <DeleteIcon />
                 </IconButton>
               }
