@@ -33,9 +33,16 @@ function PopularTags() {
         <ListItem
           sx={{
             color: `${theme.colors.primary.main}`,
-            '&:hover': { color: `${theme.colors.primary.dark}` }
+            '&:hover': { color: `${theme.colors.primary.dark}` },
           }}
           button
+          dense
+          disableGutters
+          secondaryAction={
+            <Typography variant="body2" color="text.secondary">
+              150 posts
+            </Typography>
+          }
         >
           <ListItemText primary="#HTML" />
         </ListItem>
@@ -43,9 +50,16 @@ function PopularTags() {
         <ListItem
           sx={{
             color: `${theme.colors.primary.main}`,
-            '&:hover': { color: `${theme.colors.primary.dark}` }
+            '&:hover': { color: `${theme.colors.primary.dark}` },
           }}
           button
+          dense
+          disableGutters
+          secondaryAction={
+            <Typography variant="body2" color="text.secondary">
+              300 posts
+            </Typography>
+          }
         >
           <ListItemText primary="#software_development" />
         </ListItem>
@@ -53,9 +67,16 @@ function PopularTags() {
         <ListItem
           sx={{
             color: `${theme.colors.primary.main}`,
-            '&:hover': { color: `${theme.colors.primary.dark}` }
+            '&:hover': { color: `${theme.colors.primary.dark}` },
           }}
           button
+          dense
+          disableGutters
+          secondaryAction={
+            <Typography variant="body2" color="text.secondary">
+              200 posts
+            </Typography>
+          }
         >
           <ListItemText primary="#TrendingInfuencers" />
         </ListItem>
@@ -63,9 +84,16 @@ function PopularTags() {
         <ListItem
           sx={{
             color: `${theme.colors.primary.main}`,
-            '&:hover': { color: `${theme.colors.primary.dark}` }
+            '&:hover': { color: `${theme.colors.primary.dark}` },
           }}
           button
+          dense
+          disableGutters
+          secondaryAction={
+            <Typography variant="body2" color="text.secondary">
+              100 posts
+            </Typography>
+          }
         >
           <ListItemText primary="#investorsWatch2022" />
         </ListItem>
@@ -76,14 +104,24 @@ function PopularTags() {
           </Typography>
         </ListSubheader>
         <Divider />
-        <ListItem button>
+        <ListItem
+          button
+          alignItems="flex-start"
+          divider
+          disablePadding
+          secondaryAction={
+            <Typography variant="body2" color="text.secondary">
+              Active
+            </Typography>
+          }
+        >
           <ListItemAvatar>
             <Avatar
               sx={{
                 width: 38,
                 height: 38,
                 background: `${theme.colors.info.main}`,
-                color: `${theme.palette.info.contrastText}`
+                color: `${theme.palette.info.contrastText}`,
               }}
             >
               WD
@@ -92,20 +130,31 @@ function PopularTags() {
           <ListItemText
             primaryTypographyProps={{
               variant: 'h5',
-              color: `${theme.colors.alpha.black[100]}`
+              color: `${theme.colors.alpha.black[100]}`,
             }}
             primary="Web Designers Lounge"
+            secondary="2 new messages"
           />
         </ListItem>
         <Divider />
-        <ListItem button>
+        <ListItem
+          button
+          alignItems="flex-start"
+          divider
+          disablePadding
+          secondaryAction={
+            <Typography variant="body2" color="text.secondary">
+              Active
+            </Typography>
+          }
+        >
           <ListItemAvatar>
             <Avatar
               sx={{
                 width: 38,
                 height: 38,
                 background: `${theme.colors.alpha.black[100]}`,
-                color: `${theme.colors.alpha.white[100]}`
+                color: `${theme.colors.alpha.white[100]}`,
               }}
             >
               D
@@ -114,13 +163,24 @@ function PopularTags() {
           <ListItemText
             primaryTypographyProps={{
               variant: 'h5',
-              color: `${theme.colors.alpha.black[100]}`
+              color: `${theme.colors.alpha.black[100]}`,
             }}
             primary="Writer’s Digest Daily"
+            secondary="5 new messages"
           />
         </ListItem>
         <Divider />
-        <ListItem button>
+        <ListItem
+          button
+          alignItems="flex-start"
+          divider
+          disablePadding
+          secondaryAction={
+            <Typography variant="body2" color="text.secondary">
+              Active
+            </Typography>
+          }
+        >
           <ListItemAvatar>
             <Avatar
               sx={{ width: 38, height: 38 }}
@@ -130,9 +190,10 @@ function PopularTags() {
           <ListItemText
             primaryTypographyProps={{
               variant: 'h5',
-              color: `${theme.colors.alpha.black[100]}`
+              color: `${theme.colors.alpha.black[100]}`,
             }}
             primary="Google Developers"
+            secondary="10 new messages"
           />
         </ListItem>
       </ListWrapper>
