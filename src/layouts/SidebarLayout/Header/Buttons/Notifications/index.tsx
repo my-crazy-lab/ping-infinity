@@ -73,39 +73,47 @@ function HeaderNotifications() {
         onClose={handleClose}
         open={isOpen}
         anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
+          vertical: 'bottom',
+          horizontal: 'center'
         }}
         transformOrigin={{
           vertical: 'top',
-          horizontal: 'right'
+          horizontal: 'center'
         }}
         PaperProps={{
-          elevation: 24,
+          elevation: 16,
           style: {
-            backgroundColor: '#f5f5f5',
-            padding: '10px',
+            backgroundColor: '#f0f0f0',
+            padding: '20px',
+            border: '2px solid #ccc',
+            borderRadius: '8px',
           },
           component: Paper,
         }}
         TransitionComponent={Grow}
-        transitionDuration={{ enter: 500, exit: 300 }}
+        transitionDuration={{ enter: 400, exit: 250 }}
         disableScrollLock
         container={document.body}
-        marginThreshold={20}
+        marginThreshold={24}
         slots={{
-          root: 'div',
-          paper: Paper,
+          root: 'section',
+          paper: 'article',
         }}
         slotProps={{
           root: {
             style: {
-              zIndex: 1300,
+              zIndex: 1200,
+              backgroundColor: '#fafafa',
+              border: '1px solid #ddd',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
             },
           },
           paper: {
             style: {
-              backgroundColor: '#e0f7fa',
+              backgroundColor: '#fff',
+              border: '1px solid #ddd',
+              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+              padding: '10px',
             },
           },
         }}
