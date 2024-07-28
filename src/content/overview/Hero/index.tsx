@@ -80,9 +80,9 @@ function Hero() {
         container
       >
         <Grid item md={10} lg={8} mx="auto">
-          <LabelWrapper color="success">Version 2.0.0</LabelWrapper>
+          {/* <LabelWrapper color="success">Version 2.0.0</LabelWrapper> */}
           <TypographyH1 sx={{ mb: 2 }} variant="h1">
-            Tokyo Free White React Typescript Admin Dashboard
+            HabitHare
           </TypographyH1>
           <TypographyH2
             sx={{ lineHeight: 1.5, pb: 4 }}
@@ -90,9 +90,11 @@ function Hero() {
             color="text.secondary"
             fontWeight="normal"
           >
-            High performance React template built with lots of powerful
-            Material-UI components across multiple product niches for fast &
-            perfect apps development processes
+            Introducing HabitHare, the ultimate app designed to help you build,
+            track, and maintain your habits effortlessly. Whether you want to
+            cultivate new positive behaviors or break free from old,
+            unproductive ones, HabitHare is your perfect companion on this
+            journey of self-improvement.
           </TypographyH2>
           <Button
             component={RouterLink}
@@ -114,7 +116,7 @@ function Hero() {
             Key Features
           </Button>
           <Grid container spacing={3} mt={5}>
-            <Grid item md={6}>
+            {/* <Grid item md={6}>
               <MuiAvatar>
                 <img
                   src="/static/images/logo/material-ui.svg"
@@ -147,7 +149,7 @@ function Hero() {
                   built with React + Typescript.
                 </Typography>
               </Typography>
-            </Grid>
+            </Grid> */}
           </Grid>
         </Grid>
       </Grid>

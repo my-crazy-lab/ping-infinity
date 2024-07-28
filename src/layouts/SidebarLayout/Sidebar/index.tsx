@@ -89,7 +89,7 @@ function Sidebar() {
             size="small"
             fullWidth
           >
-            Upgrade to PRO
+            Logout
           </Button>
         </Box>
       </SidebarWrapper>
