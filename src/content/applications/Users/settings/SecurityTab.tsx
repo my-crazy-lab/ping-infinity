@@ -28,6 +28,7 @@ import {
 
 import DoneTwoToneIcon from '@mui/icons-material/DoneTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
+import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
 import { format, subHours, subWeeks, subDays } from 'date-fns';
 
 const ButtonError = styled(Button)(
@@ -123,7 +124,21 @@ function SecurityTab() {
             Manage connected social accounts options
           </Typography>
         </Box>
-        <Card>
+        <Card
+          variant="outlined"
+          sx={{
+            backgroundColor: 'background.paper',
+            boxShadow: 3,
+            borderRadius: 2,
+            border: 1,
+            borderColor: 'divider',
+            padding: 2,
+            transition: '0.3s',
+            '&:hover': {
+              boxShadow: 6
+            }
+          }}
+        >
           <List>
             <ListItem sx={{ p: 3 }}>
               <ListItemAvatar sx={{ pr: 2 }}>
@@ -138,7 +153,13 @@ function SecurityTab() {
                 primary="Google"
                 secondary="A Google account hasn’t been yet added to your account"
               />
-              <Button color="secondary" size="large" variant="contained">
+              <Button
+                color="secondary"
+                size="large"
+                variant="contained"
+                startIcon={<ArrowForwardTwoToneIcon />}
+                sx={{ ml: 1 }}
+              >
                 Connect
               </Button>
             </ListItem>
@@ -146,7 +167,19 @@ function SecurityTab() {
         </Card>
       </Grid>
       <Grid item xs={12}>
-        <Card>
+        <Card
+          variant="elevation"
+          elevation={6}
+          sx={{
+            backgroundColor: 'background.default',
+            borderRadius: 2,
+            padding: 2,
+            transition: '0.3s',
+            '&:hover': {
+              boxShadow: 10
+            }
+          }}
+        >
           <List>
             <ListItem sx={{ p: 3 }}>
               <ListItemAvatar sx={{ pr: 2 }}>
@@ -163,7 +196,11 @@ function SecurityTab() {
                 primary="Facebook"
                 secondary="Your Facebook account has been successfully connected"
               />
-              <ButtonError size="large" variant="contained">
+              <ButtonError
+                size="medium"
+                variant="outlined"
+                endIcon={<DeleteTwoToneIcon />}
+              >
                 Revoke access
               </ButtonError>
             </ListItem>
@@ -181,9 +218,13 @@ function SecurityTab() {
                   lineHeight: 1
                 }}
                 primary="Twitter"
-                secondary="Your Twitter account was last syncronized 6 days ago"
+                secondary="Your Twitter account was last synchronized 6 days ago"
               />
-              <ButtonError size="large" variant="contained">
+              <ButtonError
+                size="small"
+                variant="contained"
+                startIcon={<DoneTwoToneIcon />}
+              >
                 Revoke access
               </ButtonError>
             </ListItem>
@@ -197,7 +238,21 @@ function SecurityTab() {
             Change your security preferences below
           </Typography>
         </Box>
-        <Card>
+        <Card
+          raised
+          sx={{
+            backgroundColor: 'background.paper',
+            borderRadius: 2,
+            border: '2px solid',
+            borderColor: 'divider',
+            padding: 2,
+            transition: '0.3s',
+            '&:hover': {
+              borderColor: 'primary.main',
+              boxShadow: 12
+            }
+          }}
+        >
           <List>
             <ListItem sx={{ p: 3 }}>
               <ListItemText
@@ -209,7 +264,12 @@ function SecurityTab() {
                 primary="Change Password"
                 secondary="You can change your password here"
               />
-              <Button size="large" variant="outlined">
+              <Button
+                size="small"
+                variant="outlined"
+                color="primary"
+                endIcon={<ArrowForwardTwoToneIcon />}
+              >
                 Change password
               </Button>
             </ListItem>
@@ -230,7 +290,21 @@ function SecurityTab() {
         </Card>
       </Grid>
       <Grid item xs={12}>
-        <Card>
+        <Card
+          elevation={6}
+          sx={{
+            backgroundColor: 'background.default',
+            borderRadius: 2,
+            padding: 2,
+            border: 1,
+            borderColor: 'divider',
+            transition: '0.3s',
+            '&:hover': {
+              borderColor: 'primary.main',
+              boxShadow: 6
+            }
+          }}
+        >
           <CardHeader
             subheaderTypographyProps={{}}
             titleTypographyProps={{}}
@@ -238,7 +312,30 @@ function SecurityTab() {
             subheader="Recent sign in activity logs"
           />
           <Divider />
-          <TableContainer>
+          <TableContainer
+            component="section"
+            className="custom-table-container"
+            classes={{ root: 'custom-root-class' }}
+            sx={{
+              maxHeight: 440,
+              backgroundColor: 'lightgrey',
+              border: '2px solid black',
+              borderRadius: '8px',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+              padding: 2,
+              '&:hover': {
+                backgroundColor: 'darkgrey',
+              },
+              '& .MuiTableContainer-root': {
+                backgroundColor: 'white',
+              },
+            }}
+            ownerState={{
+              classes: 'custom-owner-state',
+              sx: 'custom-sx-state',
+              component: 'section',
+            }}
+          >
             <Table>
               <TableHead>
                 <TableRow>

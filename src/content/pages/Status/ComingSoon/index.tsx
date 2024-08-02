@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import {
   Box,
+  Card,
   Typography,
   Container,
   Divider,
@@ -10,7 +11,8 @@ import {
   FormControl,
   InputAdornment,
   Button,
-  FormHelperText
+  FormHelperText,
+  FormLabel
 } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 import Logo from 'src/components/LogoSign';
@@ -133,7 +135,17 @@ function StatusComingSoon() {
 
           <Container maxWidth="sm">
             <Box sx={{ textAlign: 'center', p: 4 }}>
-              <FormControl variant="outlined" fullWidth>
+              <FormControl 
+                variant="outlined" 
+                fullWidth 
+                color="secondary" 
+                size="medium" 
+                disabled={false} 
+                required 
+                margin="normal"
+                error={false}
+              >
+                <FormLabel>Notify Me</FormLabel>
                 <OutlinedInputWrapper
                   type="text"
                   placeholder="Enter your email address here..."

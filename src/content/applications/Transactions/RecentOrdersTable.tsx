@@ -22,7 +22,8 @@ import {
   MenuItem,
   Typography,
   useTheme,
-  CardHeader
+  CardHeader,
+  Button,
 } from '@mui/material';
 
 import Label from 'src/components/Label';
@@ -206,7 +207,30 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
         />
       )}
       <Divider />
-      <TableContainer>
+      <TableContainer
+        component="section"
+        className="custom-table-container"
+        classes={{ root: 'custom-root-class' }}
+        sx={{
+          maxHeight: 440,
+          backgroundColor: 'lightgrey',
+          border: '2px solid black',
+          borderRadius: '8px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+          padding: 2,
+          '&:hover': {
+            backgroundColor: 'darkgrey',
+          },
+          '& .MuiTableContainer-root': {
+            backgroundColor: 'white',
+          },
+        }}
+        ownerState={{
+          classes: 'custom-owner-state',
+          sx: 'custom-sx-state',
+          component: 'section',
+        }}
+      >
         <Table>
           <TableHead>
             <TableRow>
@@ -218,10 +242,27 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                   onChange={handleSelectAllCryptoOrders}
                 />
               </TableCell>
-              <TableCell>Order Details</TableCell>
-              <TableCell>Order ID</TableCell>
-              <TableCell>Source</TableCell>
-              <TableCell align="right">Amount</TableCell>
+              <TableCell 
+                variant="head" 
+                size="small" 
+                align="center" 
+                sortDirection="asc"
+                sx={{
+                  backgroundColor: theme.palette.background.paper,
+                  color: theme.palette.text.secondary,
+                  padding: '10px 20px',
+                  '&:hover': {
+                    backgroundColor: theme.palette.action.hover,
+                  },
+                  border: `1px solid ${theme.palette.divider}`,
+                  boxShadow: theme.shadows[2],
+                }}
+              >
+                Order Details
+              </TableCell>
+              <TableCell variant="head" align="right">Order ID</TableCell>
+              <TableCell variant="head" align="left">Source</TableCell>
+              <TableCell align="right" padding="normal" size="medium" sortDirection="desc">Amount</TableCell>
               <TableCell align="right">Status</TableCell>
               <TableCell align="right">Actions</TableCell>
             </TableRow>
@@ -247,7 +288,22 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                       value={isCryptoOrderSelected}
                     />
                   </TableCell>
-                  <TableCell>
+                  <TableCell 
+                    component="th" 
+                    scope="row"
+                    sx={{
+                      fontWeight: 'bold',
+                      color: theme.palette.text.primary,
+                      padding: '12px 24px',
+                      '&:first-of-type': {
+                        borderLeft: `2px solid ${theme.palette.divider}`,
+                      },
+                      '&:last-of-type': {
+                        borderRight: `2px solid ${theme.palette.divider}`,
+                      },
+                      boxShadow: theme.shadows[1],
+                    }}
+                  >
                     <Typography
                       variant="body1"
                       fontWeight="bold"
@@ -261,7 +317,17 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                       {format(cryptoOrder.orderDate, 'MMMM dd yyyy')}
                     </Typography>
                   </TableCell>
-                  <TableCell>
+                  <TableCell 
+                    align="right"
+                    sx={{
+                      backgroundColor: theme.palette.background.default,
+                      padding: '8px 16px',
+                      '&:hover': {
+                        backgroundColor: theme.palette.action.hover,
+                      },
+                      borderBottom: `1px solid ${theme.palette.divider}`,
+                    }}
+                  >
                     <Typography
                       variant="body1"
                       fontWeight="bold"
@@ -272,7 +338,16 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                       {cryptoOrder.orderID}
                     </Typography>
                   </TableCell>
-                  <TableCell>
+                  <TableCell 
+                    align="left"
+                    sx={{
+                      padding: '6px 12px',
+                      border: `1px solid ${theme.palette.divider}`,
+                      '&:hover': {
+                        backgroundColor: theme.palette.action.hover,
+                      },
+                    }}
+                  >
                     <Typography
                       variant="body1"
                       fontWeight="bold"
@@ -286,7 +361,14 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                       {cryptoOrder.sourceDesc}
                     </Typography>
                   </TableCell>
-                  <TableCell align="right">
+                  <TableCell 
+                    align="right"
+                    sx={{
+                      padding: '6px 12px',
+                      border: `1px solid ${theme.palette.divider}`,
+                      backgroundColor: theme.palette.background.default,
+                    }}
+                  >
                     <Typography
                       variant="body1"
                       fontWeight="bold"
@@ -303,10 +385,22 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
                       )}
                     </Typography>
                   </TableCell>
-                  <TableCell align="right">
+                  <TableCell 
+                    align="right"
+                    sx={{
+                      padding: '6px 12px',
+                      border: `1px solid ${theme.palette.divider}`,
+                    }}
+                  >
                     {getStatusLabel(cryptoOrder.status)}
                   </TableCell>
-                  <TableCell align="right">
+                  <TableCell 
+                    align="right"
+                    sx={{
+                      padding: '6px 12px',
+                      border: `1px solid ${theme.palette.divider}`,
+                    }}
+                  >
                     <Tooltip title="Edit Order" arrow>
                       <IconButton
                         sx={{

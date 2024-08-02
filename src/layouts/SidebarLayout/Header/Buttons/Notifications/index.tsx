@@ -13,7 +13,8 @@ import {
 import { useRef, useState } from 'react';
 import NotificationsActiveTwoToneIcon from '@mui/icons-material/NotificationsActiveTwoTone';
 import { styled } from '@mui/material/styles';
-
+import Grow from '@mui/material/Grow';
+import Paper from '@mui/material/Paper';
 import { formatDistance, subDays } from 'date-fns';
 
 const NotificationsBadge = styled(Badge)(
@@ -72,12 +73,49 @@ function HeaderNotifications() {
         onClose={handleClose}
         open={isOpen}
         anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
+          vertical: 'bottom',
+          horizontal: 'center'
         }}
         transformOrigin={{
           vertical: 'top',
-          horizontal: 'right'
+          horizontal: 'center'
+        }}
+        PaperProps={{
+          elevation: 16,
+          style: {
+            backgroundColor: '#f0f0f0',
+            padding: '20px',
+            border: '2px solid #ccc',
+            borderRadius: '8px',
+          },
+          component: Paper,
+        }}
+        TransitionComponent={Grow}
+        transitionDuration={{ enter: 400, exit: 250 }}
+        disableScrollLock
+        container={document.body}
+        marginThreshold={24}
+        slots={{
+          root: 'section',
+          paper: 'article',
+        }}
+        slotProps={{
+          root: {
+            style: {
+              zIndex: 1200,
+              backgroundColor: '#fafafa',
+              border: '1px solid #ddd',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+            },
+          },
+          paper: {
+            style: {
+              backgroundColor: '#fff',
+              border: '1px solid #ddd',
+              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+              padding: '10px',
+            },
+          },
         }}
       >
         <Box

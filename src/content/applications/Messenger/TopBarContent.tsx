@@ -191,6 +191,11 @@ function TopBarContent() {
           <Accordion
             expanded={expanded === 'section1'}
             onChange={handleChange('section1')}
+            square
+            disableGutters
+            sx={{ backgroundColor: theme.palette.background.default, mb: 2 }}
+            slots={{ transition: Collapse }}
+            slotProps={{ transition: { timeout: 300 } }}
           >
             <AccordionSummaryWrapper expandIcon={<ExpandMoreIcon />}>
               <Typography variant="h5">Customize Chat</Typography>
@@ -234,6 +239,11 @@ function TopBarContent() {
           <Accordion
             expanded={expanded === 'section2'}
             onChange={handleChange('section2')}
+            square
+            disableGutters
+            sx={{ backgroundColor: theme.palette.background.default, mb: 2 }}
+            slots={{ transition: Collapse }}
+            slotProps={{ transition: { timeout: 300 } }}
           >
             <AccordionSummaryWrapper expandIcon={<ExpandMoreIcon />}>
               <Typography variant="h5">Privacy & Support</Typography>
@@ -288,6 +298,11 @@ function TopBarContent() {
           <Accordion
             expanded={expanded === 'section3'}
             onChange={handleChange('section3')}
+            square
+            disableGutters
+            sx={{ backgroundColor: theme.palette.background.default, mb: 2 }}
+            slots={{ transition: Collapse }}
+            slotProps={{ transition: { timeout: 300 } }}
           >
             <AccordionSummaryWrapper expandIcon={<ExpandMoreIcon />}>
               <Typography variant="h5">Shared Files</Typography>

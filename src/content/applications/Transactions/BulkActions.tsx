@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react';
-
 import {
   Box,
   Menu,
@@ -8,7 +7,12 @@ import {
   ListItemText,
   ListItem,
   List,
-  Typography
+  Typography,
+  MenuItem,
+  Checkbox,
+  FormControl,
+  InputLabel,
+  Select
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
@@ -29,6 +33,7 @@ const ButtonError = styled(Button)(
 function BulkActions() {
   const [onMenuOpen, menuOpen] = useState<boolean>(false);
   const moreRef = useRef<HTMLButtonElement | null>(null);
+  const [selectedValue, setSelectedValue] = useState<string>('');
 
   const openMenu = (): void => {
     menuOpen(true);
@@ -36,6 +41,10 @@ function BulkActions() {
 
   const closeMenu = (): void => {
     menuOpen(false);
+  };
+
+  const handleSelectChange = (event: any): void => {
+    setSelectedValue(event.target.value);
   };
 
   return (
@@ -76,6 +85,26 @@ function BulkActions() {
           vertical: 'center',
           horizontal: 'center'
         }}
+        PaperProps={{
+          style: {
+            maxHeight: 300,
+            width: '25ch',
+            backgroundColor: '#f5f5f5',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+          }
+        }}
+        MenuListProps={{
+          autoFocusItem: true,
+          dense: true
+        }}
+        TransitionProps={{
+          onEntering: (node, isAppearing) => {
+            console.log('Entering transition', { node, isAppearing });
+          },
+          onExiting: (node) => {
+            console.log('Exiting transition', { node });
+          }
+        }}
       >
         <List sx={{ p: 1 }} component="nav">
           <ListItem button>
@@ -83,6 +112,38 @@ function BulkActions() {
           </ListItem>
           <ListItem button>
             <ListItemText primary="Bulk edit selected" />
+          </ListItem>
+          <ListItem button>
+            <Checkbox
+              checked={selectedValue === 'option1'}
+              onChange={handleSelectChange}
+              value="option1"
+              color="primary"
+            />
+            <ListItemText primary="Select option 1" />
+          </ListItem>
+          <ListItem button>
+            <Checkbox
+              checked={selectedValue === 'option2'}
+              onChange={handleSelectChange}
+              value="option2"
+              color="primary"
+            />
+            <ListItemText primary="Select option 2" />
+          </ListItem>
+          <ListItem>
+            <FormControl fullWidth>
+              <InputLabel id="select-label">Options</InputLabel>
+              <Select
+                labelId="select-label"
+                value={selectedValue}
+                onChange={handleSelectChange}
+              >
+                <MenuItem value="option1">Option 1</MenuItem>
+                <MenuItem value="option2">Option 2</MenuItem>
+                <MenuItem value="option3">Option 3</MenuItem>
+              </Select>
+            </FormControl>
           </ListItem>
         </List>
       </Menu>

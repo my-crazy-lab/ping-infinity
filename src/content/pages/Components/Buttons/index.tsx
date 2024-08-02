@@ -14,6 +14,8 @@ import {
 import Footer from 'src/components/Footer';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import CheckIcon from '@mui/icons-material/Check';
+import SaveIcon from '@mui/icons-material/Save';
 
 function Buttons() {
   return (
@@ -41,20 +43,39 @@ function Buttons() {
               <CardHeader title="Contained Buttons" />
               <Divider />
               <CardContent>
-                <Button sx={{ margin: 1 }} variant="contained">
+                <Button
+                  sx={{ margin: 1 }}
+                  variant="contained"
+                  startIcon={<CheckIcon />}
+                  endIcon={<SaveIcon />}
+                >
                   Default
                 </Button>
-                <Button sx={{ margin: 1 }} variant="contained" color="primary">
+                <Button
+                  sx={{ margin: 1 }}
+                  variant="contained"
+                  color="primary"
+                  startIcon={<CheckIcon />}
+                  endIcon={<SaveIcon />}
+                >
                   Primary
                 </Button>
                 <Button
                   sx={{ margin: 1 }}
                   variant="contained"
                   color="secondary"
+                  startIcon={<DeleteIcon />}
+                  endIcon={<ArrowDownwardIcon />}
                 >
                   Secondary
                 </Button>
-                <Button sx={{ margin: 1 }} variant="contained" disabled>
+                <Button
+                  sx={{ margin: 1 }}
+                  variant="contained"
+                  disabled
+                  startIcon={<CheckIcon />}
+                  endIcon={<SaveIcon />}
+                >
                   Disabled
                 </Button>
                 <Button
@@ -62,6 +83,8 @@ function Buttons() {
                   variant="contained"
                   color="primary"
                   href="#contained-buttons"
+                  startIcon={<ArrowDownwardIcon />}
+                  endIcon={<SaveIcon />}
                 >
                   Link
                 </Button>
@@ -73,17 +96,19 @@ function Buttons() {
               <CardHeader title="Text Buttons" />
               <Divider />
               <CardContent>
-                <Button sx={{ margin: 1 }}>Default</Button>
-                <Button sx={{ margin: 1 }} color="primary">
+                <Button sx={{ margin: 1 }} startIcon={<CheckIcon />}>
+                  Default
+                </Button>
+                <Button sx={{ margin: 1 }} color="primary" startIcon={<CheckIcon />}>
                   Primary
                 </Button>
-                <Button sx={{ margin: 1 }} color="secondary">
+                <Button sx={{ margin: 1 }} color="secondary" startIcon={<DeleteIcon />}>
                   Secondary
                 </Button>
-                <Button sx={{ margin: 1 }} disabled>
+                <Button sx={{ margin: 1 }} disabled startIcon={<CheckIcon />}>
                   Disabled
                 </Button>
-                <Button sx={{ margin: 1 }} href="#text-buttons" color="primary">
+                <Button sx={{ margin: 1 }} href="#text-buttons" color="primary" startIcon={<ArrowDownwardIcon />}>
                   Link
                 </Button>
               </CardContent>
@@ -94,24 +119,19 @@ function Buttons() {
               <CardHeader title="Outlined Buttons" />
               <Divider />
               <CardContent>
-                <Button variant="outlined" sx={{ margin: 1 }}>
+                <Button variant="outlined" sx={{ margin: 1 }} startIcon={<CheckIcon />}>
                   Default
                 </Button>
-                <Button variant="outlined" sx={{ margin: 1 }} color="primary">
+                <Button variant="outlined" sx={{ margin: 1 }} color="primary" startIcon={<CheckIcon />}>
                   Primary
                 </Button>
-                <Button variant="outlined" sx={{ margin: 1 }} color="secondary">
+                <Button variant="outlined" sx={{ margin: 1 }} color="secondary" startIcon={<DeleteIcon />}>
                   Secondary
                 </Button>
-                <Button variant="outlined" sx={{ margin: 1 }} disabled>
+                <Button variant="outlined" sx={{ margin: 1 }} disabled startIcon={<CheckIcon />}>
                   Disabled
                 </Button>
-                <Button
-                  variant="outlined"
-                  sx={{ margin: 1 }}
-                  color="primary"
-                  href="#outlined-buttons"
-                >
+                <Button variant="outlined" sx={{ margin: 1 }} color="primary" href="#outlined-buttons" startIcon={<ArrowDownwardIcon />}>
                   Link
                 </Button>
               </CardContent>
@@ -124,74 +144,40 @@ function Buttons() {
               <CardContent>
                 <div>
                   <div>
-                    <Button size="small" sx={{ margin: 1 }}>
+                    <Button size="small" sx={{ margin: 1 }} startIcon={<CheckIcon />}>
                       Small
                     </Button>
-                    <Button size="medium" sx={{ margin: 1 }}>
+                    <Button size="medium" sx={{ margin: 1 }} startIcon={<CheckIcon />}>
                       Medium
                     </Button>
-                    <Button size="large" sx={{ margin: 1 }}>
+                    <Button size="large" sx={{ margin: 1 }} startIcon={<CheckIcon />}>
                       Large
                     </Button>
                   </div>
                   <div>
-                    <Button
-                      variant="outlined"
-                      sx={{ margin: 1 }}
-                      size="small"
-                      color="primary"
-                    >
+                    <Button variant="outlined" sx={{ margin: 1 }} size="small" color="primary" startIcon={<CheckIcon />}>
                       Small
                     </Button>
-                    <Button
-                      variant="outlined"
-                      sx={{ margin: 1 }}
-                      size="medium"
-                      color="primary"
-                    >
+                    <Button variant="outlined" sx={{ margin: 1 }} size="medium" color="primary" startIcon={<CheckIcon />}>
                       Medium
                     </Button>
-                    <Button
-                      variant="outlined"
-                      sx={{ margin: 1 }}
-                      size="large"
-                      color="primary"
-                    >
+                    <Button variant="outlined" sx={{ margin: 1 }} size="large" color="primary" startIcon={<CheckIcon />}>
                       Large
                     </Button>
                   </div>
                   <div>
-                    <Button
-                      sx={{ margin: 1 }}
-                      variant="contained"
-                      size="small"
-                      color="primary"
-                    >
+                    <Button sx={{ margin: 1 }} variant="contained" size="small" color="primary" startIcon={<CheckIcon />}>
                       Small
                     </Button>
-                    <Button
-                      sx={{ margin: 1 }}
-                      variant="contained"
-                      size="medium"
-                      color="primary"
-                    >
+                    <Button sx={{ margin: 1 }} variant="contained" size="medium" color="primary" startIcon={<CheckIcon />}>
                       Medium
                     </Button>
-                    <Button
-                      sx={{ margin: 1 }}
-                      variant="contained"
-                      size="large"
-                      color="primary"
-                    >
+                    <Button sx={{ margin: 1 }} variant="contained" size="large" color="primary" startIcon={<CheckIcon />}>
                       Large
                     </Button>
                   </div>
                   <div>
-                    <IconButton
-                      aria-label="delete"
-                      sx={{ margin: 1 }}
-                      size="small"
-                    >
+                    <IconButton aria-label="delete" sx={{ margin: 1 }} size="small">
                       <ArrowDownwardIcon fontSize="inherit" />
                     </IconButton>
                     <IconButton aria-label="delete" sx={{ margin: 1 }}>

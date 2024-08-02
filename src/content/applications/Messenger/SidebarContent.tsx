@@ -461,7 +461,23 @@ function SidebarContent() {
             </Tooltip>
           </AvatarGroup>
 
-          <Button variant="contained" size="small">
+          <Button
+            variant="contained"
+            size="large"
+            color="secondary"
+            startIcon={<CheckTwoToneIcon />}
+            endIcon={<AlarmTwoToneIcon />}
+            disabled={false}
+            component={RouterLink}
+            to="/meetings"
+            sx={{
+              ml: 2,
+              backgroundColor: 'secondary.main',
+              '&:hover': {
+                backgroundColor: 'secondary.dark'
+              }
+            }}
+          >
             Attend
           </Button>
         </Box>
@@ -517,7 +533,25 @@ function SidebarContent() {
             </Tooltip>
           </AvatarGroup>
 
-          <Button variant="contained" size="small">
+          <Button
+            variant="outlined"
+            size="medium"
+            color="info"
+            startIcon={<AlarmTwoToneIcon />}
+            endIcon={<SettingsTwoToneIcon />}
+            disabled={false}
+            component={RouterLink}
+            to="/meetings"
+            sx={{
+              ml: 2,
+              borderColor: 'info.main',
+              color: 'info.main',
+              '&:hover': {
+                borderColor: 'info.dark',
+                color: 'info.dark'
+              }
+            }}
+          >
             Attend
           </Button>
         </Box>
